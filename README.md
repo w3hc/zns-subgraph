@@ -1,4 +1,4 @@
-# NFTs2Me subgraph
+# Arthera Subscribers subgraph
 
 ## Configure
 
