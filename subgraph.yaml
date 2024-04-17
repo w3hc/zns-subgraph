@@ -17,7 +17,6 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - Transfer
         - NoGasPass
       abis:
         - name: Subscribers
