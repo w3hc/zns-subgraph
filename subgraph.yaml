@@ -18,7 +18,7 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Transfer
-        - Subscription
+        - NoGasPass
       abis:
         - name: Subscribers
           file: ./abis/Subscribers.json

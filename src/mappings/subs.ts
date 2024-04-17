@@ -3,7 +3,7 @@ import {
   Subscribers,
 } from "../../generated/Subscribers/Subscribers"
 import {
-  Subscription,
+  NoGasPass,
   Transfer
 } from "../../generated/schema"
 
@@ -19,18 +19,18 @@ export function handleTransfer(event: TransferEvent): void {
   transfer.save()
   // The transfer entity handler code ends here
 
-  // Here we write the handler code for the Subscription entity
+  // Here we write the handler code for the NoGasPass entity
   let contractAddress = Subscribers.bind(event.address);
-  let subscription = Subscription.load(event.params.tokenId.toString());
+  let noGasPass = NoGasPass.load(event.params.tokenId.toString());
 
-  if (subscription == null) {
-    subscription = new Subscription(event.params.tokenId.toString());
-    subscription.creator = event.params.to;
-    subscription.tokenURI = contractAddress.tokenURI(event.params.tokenId);
+  if (noGasPass == null) {
+    noGasPass = new NoGasPass(event.params.tokenId.toString());
+    noGasPass.creator = event.params.to;
+    noGasPass.tokenURI = contractAddress.tokenURI(event.params.tokenId);
   }
 
-  subscription.newOwner = event.params.to;
-  subscription.blockNumber = event.block.number;
-  subscription.save();
-  // The subscription entity handler code ends here
+  noGasPass.newOwner = event.params.to;
+  noGasPass.blockNumber = event.block.number;
+  noGasPass.save();
+  // The noGasPass entity handler code ends here
 }
